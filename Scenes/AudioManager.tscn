@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dre2rpy3vpflw"]
+
+[ext_resource type="Script" uid="uid://bhasbdmmlxse6" path="res://scripts/audio_manager.gd" id="1_dygvs"]
+[ext_resource type="AudioStream" uid="uid://d1mrjh7pyhxgt" path="res://sounds/Peg Hits/Bubble/Bass Boost/Bubble_Bass_2.wav" id="2_yq78e"]
+[ext_resource type="AudioStream" uid="uid://ccams76fdmnmy" path="res://sounds/Peg Hits/Plastic/With Bass Boost/Plastic_Bass_2.wav" id="3_u6owb"]
+[ext_resource type="AudioStream" uid="uid://dwj8utgwwm6kf" path="res://sounds/Peg Hits/Bubble/No Bass Boost/Bubble_No Bass_3.wav" id="3_yq78e"]
+
+[node name="AudioManager" type="Node" unique_id=986965393]
+script = ExtResource("1_dygvs")
+
+[node name="PegHitSound" type="AudioStreamPlayer" parent="." unique_id=34117341]
+stream = ExtResource("2_yq78e")
+pitch_scale = 0.8
+
+[node name="PegRehitSound" type="AudioStreamPlayer" parent="." unique_id=1393247035]
+stream = ExtResource("3_yq78e")
+pitch_scale = 0.8
+
+[node name="LaunchSound" type="AudioStreamPlayer" parent="." unique_id=981019784]
+stream = ExtResource("3_u6owb")

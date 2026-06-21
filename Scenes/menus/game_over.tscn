@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://hq2tg0uuiafs"]
+
+[ext_resource type="Script" uid="uid://758vfan3v1ri" path="res://scripts/game_over.gd" id="1_4tncf"]
+
+[node name="Game Over" type="CanvasLayer" unique_id=357022524]
+script = ExtResource("1_4tncf")
+
+[node name="back to menu" type="Button" parent="." unique_id=2026972632]
+offset_left = 800.0
+offset_top = 560.0
+offset_right = 1110.2184
+offset_bottom = 708.15063
+
+[node name="Label" type="Label" parent="back to menu" unique_id=164160705]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 39.0
+offset_right = 230.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 30
+text = "main menu!"
+
+[node name="Label" type="Label" parent="." unique_id=1699593168]
+offset_left = 797.0
+offset_top = 284.0
+offset_right = 1096.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 30
+text = "game over sorry bub"
+
+[connection signal="pressed" from="back to menu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="back to menu" to="." method="_on_continue_pressed"]

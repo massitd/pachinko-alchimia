@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bbv6uxqxw8pdw"]
+
+[ext_resource type="Script" uid="uid://djmm4gux61m8w" path="res://scripts/main_menu.gd" id="1_1bxdl"]
+
+[node name="MainMenu" type="Node" unique_id=1817388258]
+script = ExtResource("1_1bxdl")
+
+[node name="StartButton" type="Button" parent="." unique_id=1768713893]
+offset_left = 362.0
+offset_top = 622.0
+offset_right = 672.2184
+offset_bottom = 770.15063
+
+[node name="Label" type="Label" parent="StartButton" unique_id=246196582]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 39.0
+offset_right = 230.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="Continue" type="Button" parent="." unique_id=2026972632]
+offset_left = 1262.0
+offset_top = 635.0
+offset_right = 1572.2184
+offset_bottom = 783.15063
+
+[node name="Label" type="Label" parent="Continue" unique_id=164160705]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 39.0
+offset_right = 230.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="Label" type="Label" parent="." unique_id=1699593168]
+offset_left = 797.0
+offset_top = 284.0
+offset_right = 1042.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

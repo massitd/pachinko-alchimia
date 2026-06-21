@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccams76fdmnmy"
+path="res://.godot/imported/Plastic_Bass_2.wav-4c613060cf985b60e431e1ab440dae29.sample"
+
+[deps]
+
+source_file="res://sounds/Peg Hits/Plastic/With Bass Boost/Plastic_Bass_2.wav"
+dest_files=["res://.godot/imported/Plastic_Bass_2.wav-4c613060cf985b60e431e1ab440dae29.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

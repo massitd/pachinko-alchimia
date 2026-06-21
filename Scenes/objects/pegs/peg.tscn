@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://gdivvcbpeggy"]
+
+[ext_resource type="Texture2D" uid="uid://denu35c8evem2" path="res://Assets/placeholder_peg.png" id="1_fd3xd"]
+[ext_resource type="Script" uid="uid://du2o2b4vxwmmd" path="res://scripts/peg.gd" id="1_l6a3n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avqsf"]
+radius = 15.0
+
+[node name="BasePeg" type="StaticBody2D" unique_id=1558433380]
+script = ExtResource("1_l6a3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1324932666]
+shape = SubResource("CircleShape2D_avqsf")
+
+[node name="Peg" type="Sprite2D" parent="." unique_id=1642497540]
+position = Vector2(0.06250024, -1.1622906e-06)
+scale = Vector2(0.31874996, 0.31999996)
+texture = ExtResource("1_fd3xd")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1830941441]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1904219860]
+shape = SubResource("CircleShape2D_avqsf")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

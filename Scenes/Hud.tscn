@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bjhu0ybyx5t3d"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1273233222]
+
+[node name="Score Panel3" type="Panel" parent="." unique_id=1491122562]
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.823
+anchor_right = 0.07
+anchor_bottom = 0.823
+offset_left = -123.399994
+offset_top = -175.84003
+offset_right = 56.600006
+offset_bottom = -68.77002
+
+[node name="Score Panel4" type="Panel" parent="." unique_id=1169677347]
+anchors_preset = -1
+anchor_left = 0.054
+anchor_top = 0.822
+anchor_right = 0.054
+anchor_bottom = 0.822
+offset_left = -90.68
+offset_top = -53.76001
+offset_right = 89.32
+offset_bottom = 53.309998
+
+[node name="Score Panel5" type="Panel" parent="." unique_id=1612167316]
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.823
+anchor_right = 0.07
+anchor_bottom = 0.823
+offset_left = -122.399994
+offset_top = 69.15997
+offset_right = 57.600006
+offset_bottom = 176.23004
+
+[node name="GoalScore" type="Label" parent="." unique_id=1382636585]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.712
+anchor_right = 0.052
+anchor_bottom = 0.712
+offset_left = -71.840004
+offset_top = -34.960022
+offset_right = 71.159996
+offset_bottom = 34.039978
+theme_override_font_sizes/font_size = 50
+text = "10000"
+
+[node name="RoundScore" type="Label" parent="." unique_id=1475638158]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.818
+anchor_right = 0.052
+anchor_bottom = 0.818
+offset_left = -70.840004
+offset_top = -34.440002
+offset_right = 72.159996
+offset_bottom = 34.559998
+theme_override_font_sizes/font_size = 50
+text = "10000"
+
+[node name="ShotScore" type="Label" parent="." unique_id=1648126904]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.93500006
+anchor_right = 0.052
+anchor_bottom = 0.93500006
+offset_left = -71.840004
+offset_top = -34.80005
+offset_right = 71.159996
+offset_bottom = 34.19995
+theme_override_font_sizes/font_size = 50
+text = "10000"
+
+[node name="Score Panel6" type="Panel" parent="." unique_id=1532748039]
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.823
+anchor_right = 0.07
+anchor_bottom = 0.823
+offset_left = -123.399994
+offset_top = -873.84
+offset_right = 56.600006
+offset_bottom = -766.77
+
+[node name="BallsRemaining" type="Label" parent="." unique_id=2098804314]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.712
+anchor_right = 0.052
+anchor_bottom = 0.712
+offset_left = -71.840004
+offset_top = -732.96
+offset_right = 71.159996
+offset_bottom = -663.96
+theme_override_font_sizes/font_size = 50
+
+[node name="MultPanel" type="Panel" parent="." unique_id=777133042]
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.823
+anchor_right = 0.07
+anchor_bottom = 0.823
+offset_left = 76.600006
+offset_top = 68.15997
+offset_right = 256.6
+offset_bottom = 175.23004
+
+[node name="ShotMult" type="Label" parent="." unique_id=764198126]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.93500006
+anchor_right = 0.052
+anchor_bottom = 0.93500006
+offset_left = 202.16
+offset_top = -34.80005
+offset_right = 269.16
+offset_bottom = 34.19995
+theme_override_font_sizes/font_size = 50
+text = "10"
+
+[node name="multX" type="Label" parent="." unique_id=606909737]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.93500006
+anchor_right = 0.052
+anchor_bottom = 0.93500006
+offset_left = 138.16
+offset_top = -36.80005
+offset_right = 205.16
+offset_bottom = 32.19995
+theme_override_font_sizes/font_size = 50
+text = "x"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PegType" format=3 uid="uid://c1pvti41wsok2"]
+
+[ext_resource type="Script" uid="uid://dpfk4gqewq1gw" path="res://scripts/PegType.gd" id="1_hmdf3"]
+
+[resource]
+script = ExtResource("1_hmdf3")
+color = Color(1, 0.8, 0.078431375, 1)
+score_value = 20
+metadata/_custom_type_script = "uid://dpfk4gqewq1gw"

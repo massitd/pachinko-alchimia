@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bt8e224bg1h00"
+path="res://.godot/imported/Plastic NoBass_2.wav-d542a89a18805bb347c8d3c23a32a2f5.sample"
+
+[deps]
+
+source_file="res://sounds/Peg Hits/Plastic/No Bass Boost/Plastic NoBass_2.wav"
+dest_files=["res://.godot/imported/Plastic NoBass_2.wav-d542a89a18805bb347c8d3c23a32a2f5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

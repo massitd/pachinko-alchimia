@@ -1,0 +1,523 @@
+[gd_scene format=3 uid="uid://ce0pce6gqlpo5"]
+
+[ext_resource type="PackedScene" uid="uid://bf4cti01kv2h6" path="res://Scenes/Levels/test_level.tscn" id="1_r150o"]
+[ext_resource type="Script" uid="uid://cr62yaatelk0g" path="res://scripts/state_manager.gd" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://gdivvcbpeggy" path="res://Scenes/objects/pegs/peg.tscn" id="2_pbw6q"]
+[ext_resource type="Script" uid="uid://3k00h7two4k2" path="res://scripts/scoring_manager.gd" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://dxuacodiqvnxu" path="res://Scenes/objects/pegs/rect_peg.tscn" id="3_v1gob"]
+
+[node name="Main" type="Node" unique_id=94884248]
+
+[node name="TestLevel" parent="." unique_id=711606592 instance=ExtResource("1_r150o")]
+
+[node name="launcher" parent="TestLevel" index="2" unique_id=1414148059 node_paths=PackedStringArray("state_manager")]
+state_manager = NodePath("../../StateManager")
+
+[node name="BasePeg13" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="1" unique_id=1558433380 instance=ExtResource("2_pbw6q")]
+position = Vector2(819, 488)
+
+[node name="BasePeg8" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="3" unique_id=1895695208 instance=ExtResource("2_pbw6q")]
+position = Vector2(962, 484)
+
+[node name="BasePeg12" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="4" unique_id=2005234299 instance=ExtResource("2_pbw6q")]
+position = Vector2(1037, 430)
+
+[node name="BasePeg9" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="5" unique_id=1463481639 instance=ExtResource("2_pbw6q")]
+position = Vector2(897, 498)
+
+[node name="BasePeg10" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="6" unique_id=738573519 instance=ExtResource("2_pbw6q")]
+position = Vector2(864, 451)
+
+[node name="BasePeg11" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="7" unique_id=2019326968 instance=ExtResource("2_pbw6q")]
+position = Vector2(864, 451)
+
+[node name="BasePeg14" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="10" unique_id=1035888521 instance=ExtResource("2_pbw6q")]
+position = Vector2(847, 729)
+
+[node name="BasePeg15" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="11" unique_id=1969291993 instance=ExtResource("2_pbw6q")]
+position = Vector2(826, 660)
+
+[node name="BasePeg16" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="12" unique_id=59055758 instance=ExtResource("2_pbw6q")]
+position = Vector2(950, 771)
+
+[node name="BasePeg17" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="13" unique_id=1857376411 instance=ExtResource("2_pbw6q")]
+position = Vector2(969, 656)
+
+[node name="BasePeg18" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="14" unique_id=1139009709 instance=ExtResource("2_pbw6q")]
+position = Vector2(1044, 602)
+
+[node name="BasePeg19" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="15" unique_id=132356132 instance=ExtResource("2_pbw6q")]
+position = Vector2(904, 670)
+
+[node name="BasePeg20" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="16" unique_id=1988866341 instance=ExtResource("2_pbw6q")]
+position = Vector2(871, 623)
+
+[node name="BasePeg21" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="17" unique_id=1901278530 instance=ExtResource("2_pbw6q")]
+position = Vector2(871, 623)
+
+[node name="BasePeg22" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="18" unique_id=21230521 instance=ExtResource("2_pbw6q")]
+position = Vector2(1033, 723)
+
+[node name="BasePeg23" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="19" unique_id=1467165253 instance=ExtResource("2_pbw6q")]
+position = Vector2(764, 681)
+
+[node name="BasePeg24" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="20" unique_id=813776421 instance=ExtResource("2_pbw6q")]
+position = Vector2(1135, 716)
+
+[node name="BasePeg25" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="21" unique_id=1323741269 instance=ExtResource("2_pbw6q")]
+position = Vector2(1114, 647)
+
+[node name="BasePeg26" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="22" unique_id=582623294 instance=ExtResource("2_pbw6q")]
+position = Vector2(1238, 758)
+
+[node name="BasePeg27" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="23" unique_id=776597164 instance=ExtResource("2_pbw6q")]
+position = Vector2(1257, 643)
+
+[node name="BasePeg28" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="24" unique_id=980250331 instance=ExtResource("2_pbw6q")]
+position = Vector2(1332, 589)
+
+[node name="BasePeg29" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="25" unique_id=1182770014 instance=ExtResource("2_pbw6q")]
+position = Vector2(1192, 657)
+
+[node name="BasePeg30" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="26" unique_id=201362229 instance=ExtResource("2_pbw6q")]
+position = Vector2(1159, 610)
+
+[node name="BasePeg31" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="27" unique_id=847921047 instance=ExtResource("2_pbw6q")]
+position = Vector2(1159, 610)
+
+[node name="BasePeg32" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="28" unique_id=1084391237 instance=ExtResource("2_pbw6q")]
+position = Vector2(1321, 710)
+
+[node name="BasePeg33" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="29" unique_id=1323720471 instance=ExtResource("2_pbw6q")]
+position = Vector2(1052, 668)
+
+[node name="BasePeg34" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="30" unique_id=429976405 instance=ExtResource("2_pbw6q")]
+position = Vector2(1181, 487)
+
+[node name="BasePeg35" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="31" unique_id=109272463 instance=ExtResource("2_pbw6q")]
+position = Vector2(1160, 418)
+
+[node name="BasePeg36" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="32" unique_id=850819028 instance=ExtResource("2_pbw6q")]
+position = Vector2(1284, 529)
+
+[node name="BasePeg37" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="33" unique_id=1657403333 instance=ExtResource("2_pbw6q")]
+position = Vector2(1303, 414)
+
+[node name="BasePeg38" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="34" unique_id=1688425574 instance=ExtResource("2_pbw6q")]
+position = Vector2(1378, 360)
+
+[node name="BasePeg39" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="35" unique_id=1051529416 instance=ExtResource("2_pbw6q")]
+position = Vector2(1238, 428)
+
+[node name="BasePeg40" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="36" unique_id=911135514 instance=ExtResource("2_pbw6q")]
+position = Vector2(1205, 381)
+
+[node name="BasePeg41" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="37" unique_id=1158358524 instance=ExtResource("2_pbw6q")]
+position = Vector2(1205, 381)
+
+[node name="BasePeg42" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="38" unique_id=609723651 instance=ExtResource("2_pbw6q")]
+position = Vector2(1367, 481)
+
+[node name="BasePeg43" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="39" unique_id=336031772 instance=ExtResource("2_pbw6q")]
+position = Vector2(1098, 439)
+
+[node name="BasePeg44" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="40" unique_id=476272735 instance=ExtResource("2_pbw6q")]
+position = Vector2(553, 755)
+
+[node name="BasePeg45" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="41" unique_id=1186765616 instance=ExtResource("2_pbw6q")]
+position = Vector2(532, 686)
+
+[node name="BasePeg46" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="42" unique_id=1690365982 instance=ExtResource("2_pbw6q")]
+position = Vector2(656, 797)
+
+[node name="BasePeg47" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="43" unique_id=477142752 instance=ExtResource("2_pbw6q")]
+position = Vector2(675, 682)
+
+[node name="BasePeg48" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="44" unique_id=476315687 instance=ExtResource("2_pbw6q")]
+position = Vector2(750, 628)
+
+[node name="BasePeg49" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="45" unique_id=192006888 instance=ExtResource("2_pbw6q")]
+position = Vector2(610, 696)
+
+[node name="BasePeg50" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="46" unique_id=1948243867 instance=ExtResource("2_pbw6q")]
+position = Vector2(577, 649)
+
+[node name="BasePeg51" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="47" unique_id=675706833 instance=ExtResource("2_pbw6q")]
+position = Vector2(577, 649)
+
+[node name="BasePeg52" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="48" unique_id=1811419931 instance=ExtResource("2_pbw6q")]
+position = Vector2(739, 749)
+
+[node name="BasePeg53" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="49" unique_id=5531335 instance=ExtResource("2_pbw6q")]
+position = Vector2(470, 707)
+
+[node name="BasePeg54" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="50" unique_id=1609043903 instance=ExtResource("2_pbw6q")]
+position = Vector2(522, 579)
+
+[node name="BasePeg55" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="51" unique_id=127843362 instance=ExtResource("2_pbw6q")]
+position = Vector2(501, 510)
+
+[node name="BasePeg56" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="52" unique_id=552535543 instance=ExtResource("2_pbw6q")]
+position = Vector2(625, 621)
+
+[node name="BasePeg57" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="53" unique_id=1390630434 instance=ExtResource("2_pbw6q")]
+position = Vector2(644, 506)
+
+[node name="BasePeg58" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="54" unique_id=507868495 instance=ExtResource("2_pbw6q")]
+position = Vector2(719, 452)
+
+[node name="BasePeg59" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="55" unique_id=186354132 instance=ExtResource("2_pbw6q")]
+position = Vector2(579, 520)
+
+[node name="BasePeg60" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="56" unique_id=174366092 instance=ExtResource("2_pbw6q")]
+position = Vector2(546, 473)
+
+[node name="BasePeg61" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="57" unique_id=1922129314 instance=ExtResource("2_pbw6q")]
+position = Vector2(546, 473)
+
+[node name="BasePeg62" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="58" unique_id=1096182568 instance=ExtResource("2_pbw6q")]
+position = Vector2(708, 573)
+
+[node name="BasePeg63" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="59" unique_id=1419812532 instance=ExtResource("2_pbw6q")]
+position = Vector2(439, 531)
+
+[node name="BasePeg64" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="60" unique_id=1266827978 instance=ExtResource("2_pbw6q")]
+position = Vector2(360, 552)
+
+[node name="BasePeg65" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="61" unique_id=215344169 instance=ExtResource("2_pbw6q")]
+position = Vector2(339, 483)
+
+[node name="BasePeg66" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="62" unique_id=1241230525 instance=ExtResource("2_pbw6q")]
+position = Vector2(463, 594)
+
+[node name="BasePeg67" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="63" unique_id=865019283 instance=ExtResource("2_pbw6q")]
+position = Vector2(482, 479)
+
+[node name="BasePeg68" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="64" unique_id=1637576360 instance=ExtResource("2_pbw6q")]
+position = Vector2(557, 425)
+
+[node name="BasePeg69" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="65" unique_id=711775380 instance=ExtResource("2_pbw6q")]
+position = Vector2(417, 493)
+
+[node name="BasePeg70" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="66" unique_id=179375249 instance=ExtResource("2_pbw6q")]
+position = Vector2(384, 446)
+
+[node name="BasePeg71" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="67" unique_id=2019617188 instance=ExtResource("2_pbw6q")]
+position = Vector2(384, 446)
+
+[node name="BasePeg72" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="68" unique_id=766089583 instance=ExtResource("2_pbw6q")]
+position = Vector2(546, 546)
+
+[node name="BasePeg73" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="69" unique_id=13749847 instance=ExtResource("2_pbw6q")]
+position = Vector2(277, 504)
+
+[node name="BasePeg74" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="70" unique_id=1786638019 instance=ExtResource("2_pbw6q")]
+position = Vector2(347, 738)
+
+[node name="BasePeg75" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="71" unique_id=1187686686 instance=ExtResource("2_pbw6q")]
+position = Vector2(326, 669)
+
+[node name="BasePeg76" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="72" unique_id=2085088250 instance=ExtResource("2_pbw6q")]
+position = Vector2(450, 780)
+
+[node name="BasePeg77" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="73" unique_id=1814207685 instance=ExtResource("2_pbw6q")]
+position = Vector2(469, 665)
+
+[node name="BasePeg78" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="74" unique_id=1076238795 instance=ExtResource("2_pbw6q")]
+position = Vector2(544, 611)
+
+[node name="BasePeg79" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="75" unique_id=270621090 instance=ExtResource("2_pbw6q")]
+position = Vector2(404, 679)
+
+[node name="BasePeg80" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="76" unique_id=1972737389 instance=ExtResource("2_pbw6q")]
+position = Vector2(371, 632)
+
+[node name="BasePeg81" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="77" unique_id=415436535 instance=ExtResource("2_pbw6q")]
+position = Vector2(371, 632)
+
+[node name="BasePeg82" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="78" unique_id=1858893164 instance=ExtResource("2_pbw6q")]
+position = Vector2(533, 732)
+
+[node name="BasePeg83" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="79" unique_id=1780561317 instance=ExtResource("2_pbw6q")]
+position = Vector2(264, 690)
+
+[node name="BasePeg84" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="80" unique_id=1009807326 instance=ExtResource("2_pbw6q")]
+position = Vector2(500, 916)
+
+[node name="BasePeg85" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="81" unique_id=285635083 instance=ExtResource("2_pbw6q")]
+position = Vector2(479, 847)
+
+[node name="BasePeg86" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="82" unique_id=444696550 instance=ExtResource("2_pbw6q")]
+position = Vector2(603, 958)
+
+[node name="BasePeg87" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="83" unique_id=1084947466 instance=ExtResource("2_pbw6q")]
+position = Vector2(622, 843)
+
+[node name="BasePeg88" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="84" unique_id=630985085 instance=ExtResource("2_pbw6q")]
+position = Vector2(697, 789)
+
+[node name="BasePeg89" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="85" unique_id=1802867384 instance=ExtResource("2_pbw6q")]
+position = Vector2(557, 857)
+
+[node name="BasePeg90" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="86" unique_id=401618347 instance=ExtResource("2_pbw6q")]
+position = Vector2(524, 810)
+
+[node name="BasePeg91" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="87" unique_id=903239660 instance=ExtResource("2_pbw6q")]
+position = Vector2(524, 810)
+
+[node name="BasePeg92" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="88" unique_id=784238298 instance=ExtResource("2_pbw6q")]
+position = Vector2(686, 910)
+
+[node name="BasePeg93" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="89" unique_id=1831772271 instance=ExtResource("2_pbw6q")]
+position = Vector2(417, 868)
+
+[node name="BasePeg94" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="90" unique_id=758737736 instance=ExtResource("2_pbw6q")]
+position = Vector2(770, 891)
+
+[node name="BasePeg95" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="91" unique_id=1178063326 instance=ExtResource("2_pbw6q")]
+position = Vector2(749, 822)
+
+[node name="BasePeg96" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="92" unique_id=994869393 instance=ExtResource("2_pbw6q")]
+position = Vector2(873, 933)
+
+[node name="BasePeg97" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="93" unique_id=1159176272 instance=ExtResource("2_pbw6q")]
+position = Vector2(892, 818)
+
+[node name="BasePeg98" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="94" unique_id=1106369303 instance=ExtResource("2_pbw6q")]
+position = Vector2(967, 764)
+
+[node name="BasePeg99" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="95" unique_id=719879543 instance=ExtResource("2_pbw6q")]
+position = Vector2(827, 832)
+
+[node name="BasePeg100" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="96" unique_id=907597345 instance=ExtResource("2_pbw6q")]
+position = Vector2(794, 785)
+
+[node name="BasePeg101" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="97" unique_id=1822053172 instance=ExtResource("2_pbw6q")]
+position = Vector2(794, 785)
+
+[node name="BasePeg102" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="98" unique_id=255284172 instance=ExtResource("2_pbw6q")]
+position = Vector2(956, 885)
+
+[node name="BasePeg103" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="99" unique_id=1021058514 instance=ExtResource("2_pbw6q")]
+position = Vector2(687, 843)
+
+[node name="BasePeg104" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="100" unique_id=784007014 instance=ExtResource("2_pbw6q")]
+position = Vector2(1029, 869)
+
+[node name="BasePeg105" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="101" unique_id=390190908 instance=ExtResource("2_pbw6q")]
+position = Vector2(1008, 800)
+
+[node name="BasePeg106" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="102" unique_id=1882170612 instance=ExtResource("2_pbw6q")]
+position = Vector2(1132, 911)
+
+[node name="BasePeg107" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="103" unique_id=1837821941 instance=ExtResource("2_pbw6q")]
+position = Vector2(1151, 796)
+
+[node name="BasePeg108" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="104" unique_id=1392094228 instance=ExtResource("2_pbw6q")]
+position = Vector2(1226, 742)
+
+[node name="BasePeg109" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="105" unique_id=484910251 instance=ExtResource("2_pbw6q")]
+position = Vector2(1086, 810)
+
+[node name="BasePeg110" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="106" unique_id=638241362 instance=ExtResource("2_pbw6q")]
+position = Vector2(1053, 763)
+
+[node name="BasePeg111" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="107" unique_id=1444290100 instance=ExtResource("2_pbw6q")]
+position = Vector2(1053, 763)
+
+[node name="BasePeg112" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="108" unique_id=266099519 instance=ExtResource("2_pbw6q")]
+position = Vector2(1215, 863)
+
+[node name="BasePeg113" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="109" unique_id=453404114 instance=ExtResource("2_pbw6q")]
+position = Vector2(946, 821)
+
+[node name="BasePeg114" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="110" unique_id=1487965406 instance=ExtResource("2_pbw6q")]
+position = Vector2(1294, 871)
+
+[node name="BasePeg115" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="111" unique_id=968542885 instance=ExtResource("2_pbw6q")]
+position = Vector2(1273, 802)
+
+[node name="BasePeg116" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="112" unique_id=967984997 instance=ExtResource("2_pbw6q")]
+position = Vector2(1397, 913)
+
+[node name="BasePeg117" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="113" unique_id=576551814 instance=ExtResource("2_pbw6q")]
+position = Vector2(1416, 798)
+
+[node name="BasePeg118" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="114" unique_id=829151518 instance=ExtResource("2_pbw6q")]
+position = Vector2(1491, 744)
+
+[node name="BasePeg119" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="115" unique_id=1342709948 instance=ExtResource("2_pbw6q")]
+position = Vector2(1351, 812)
+
+[node name="BasePeg120" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="116" unique_id=1714782118 instance=ExtResource("2_pbw6q")]
+position = Vector2(1318, 765)
+
+[node name="BasePeg121" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="117" unique_id=885876125 instance=ExtResource("2_pbw6q")]
+position = Vector2(1318, 765)
+
+[node name="BasePeg122" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="118" unique_id=212180179 instance=ExtResource("2_pbw6q")]
+position = Vector2(1480, 865)
+
+[node name="BasePeg123" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="119" unique_id=635148304 instance=ExtResource("2_pbw6q")]
+position = Vector2(1211, 823)
+
+[node name="BasePeg124" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="120" unique_id=2044847788 instance=ExtResource("2_pbw6q")]
+position = Vector2(1363, 716)
+
+[node name="BasePeg125" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="121" unique_id=467953282 instance=ExtResource("2_pbw6q")]
+position = Vector2(1342, 647)
+
+[node name="BasePeg126" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="122" unique_id=79834960 instance=ExtResource("2_pbw6q")]
+position = Vector2(1466, 758)
+
+[node name="BasePeg127" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="123" unique_id=1488890856 instance=ExtResource("2_pbw6q")]
+position = Vector2(1485, 643)
+
+[node name="BasePeg128" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="124" unique_id=538387352 instance=ExtResource("2_pbw6q")]
+position = Vector2(1560, 589)
+
+[node name="BasePeg129" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="125" unique_id=1568528828 instance=ExtResource("2_pbw6q")]
+position = Vector2(1420, 657)
+
+[node name="BasePeg130" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="126" unique_id=1208529202 instance=ExtResource("2_pbw6q")]
+position = Vector2(1387, 610)
+
+[node name="BasePeg131" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="127" unique_id=1157921964 instance=ExtResource("2_pbw6q")]
+position = Vector2(1387, 610)
+
+[node name="BasePeg132" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="128" unique_id=363592910 instance=ExtResource("2_pbw6q")]
+position = Vector2(1549, 710)
+
+[node name="BasePeg133" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="129" unique_id=452862580 instance=ExtResource("2_pbw6q")]
+position = Vector2(1280, 668)
+
+[node name="BasePeg134" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="130" unique_id=1730724104 instance=ExtResource("2_pbw6q")]
+position = Vector2(1369, 632)
+
+[node name="BasePeg135" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="131" unique_id=1211762412 instance=ExtResource("2_pbw6q")]
+position = Vector2(1348, 563)
+
+[node name="BasePeg136" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="132" unique_id=1746342563 instance=ExtResource("2_pbw6q")]
+position = Vector2(1472, 674)
+
+[node name="BasePeg137" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="133" unique_id=1947359573 instance=ExtResource("2_pbw6q")]
+position = Vector2(1491, 559)
+
+[node name="BasePeg138" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="134" unique_id=1519044283 instance=ExtResource("2_pbw6q")]
+position = Vector2(1566, 505)
+
+[node name="BasePeg139" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="135" unique_id=997490963 instance=ExtResource("2_pbw6q")]
+position = Vector2(1426, 573)
+
+[node name="BasePeg140" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="136" unique_id=1070145733 instance=ExtResource("2_pbw6q")]
+position = Vector2(1393, 526)
+
+[node name="BasePeg141" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="137" unique_id=1878787229 instance=ExtResource("2_pbw6q")]
+position = Vector2(1393, 526)
+
+[node name="BasePeg142" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="138" unique_id=966225398 instance=ExtResource("2_pbw6q")]
+position = Vector2(1555, 626)
+
+[node name="BasePeg143" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="139" unique_id=1287753885 instance=ExtResource("2_pbw6q")]
+position = Vector2(1286, 584)
+
+[node name="BasePeg144" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="140" unique_id=1295944661 instance=ExtResource("2_pbw6q")]
+position = Vector2(1368, 536)
+
+[node name="BasePeg145" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="141" unique_id=1910630767 instance=ExtResource("2_pbw6q")]
+position = Vector2(1347, 467)
+
+[node name="BasePeg146" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="142" unique_id=761245458 instance=ExtResource("2_pbw6q")]
+position = Vector2(1471, 578)
+
+[node name="BasePeg147" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="143" unique_id=1337497715 instance=ExtResource("2_pbw6q")]
+position = Vector2(1490, 463)
+
+[node name="BasePeg148" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="144" unique_id=526153183 instance=ExtResource("2_pbw6q")]
+position = Vector2(1565, 409)
+
+[node name="BasePeg149" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="145" unique_id=1022753900 instance=ExtResource("2_pbw6q")]
+position = Vector2(1425, 477)
+
+[node name="BasePeg150" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="146" unique_id=669180256 instance=ExtResource("2_pbw6q")]
+position = Vector2(1392, 430)
+
+[node name="BasePeg151" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="147" unique_id=1731883908 instance=ExtResource("2_pbw6q")]
+position = Vector2(1392, 430)
+
+[node name="BasePeg152" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="148" unique_id=268585289 instance=ExtResource("2_pbw6q")]
+position = Vector2(1554, 530)
+
+[node name="BasePeg153" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="149" unique_id=1233692652 instance=ExtResource("2_pbw6q")]
+position = Vector2(1285, 488)
+
+[node name="BasePeg154" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="150" unique_id=303144937 instance=ExtResource("2_pbw6q")]
+position = Vector2(677, 501)
+
+[node name="BasePeg155" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="151" unique_id=518353680 instance=ExtResource("2_pbw6q")]
+position = Vector2(656, 432)
+
+[node name="BasePeg156" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="152" unique_id=390992414 instance=ExtResource("2_pbw6q")]
+position = Vector2(780, 543)
+
+[node name="BasePeg157" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="153" unique_id=1187404750 instance=ExtResource("2_pbw6q")]
+position = Vector2(799, 428)
+
+[node name="BasePeg158" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="154" unique_id=1621712163 instance=ExtResource("2_pbw6q")]
+position = Vector2(874, 374)
+
+[node name="BasePeg159" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="155" unique_id=61512857 instance=ExtResource("2_pbw6q")]
+position = Vector2(734, 442)
+
+[node name="BasePeg160" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="156" unique_id=1542750362 instance=ExtResource("2_pbw6q")]
+position = Vector2(701, 395)
+
+[node name="BasePeg161" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="157" unique_id=723387247 instance=ExtResource("2_pbw6q")]
+position = Vector2(701, 395)
+
+[node name="BasePeg162" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="158" unique_id=687892894 instance=ExtResource("2_pbw6q")]
+position = Vector2(863, 495)
+
+[node name="BasePeg163" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="159" unique_id=267975134 instance=ExtResource("2_pbw6q")]
+position = Vector2(594, 453)
+
+[node name="BasePeg164" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="160" unique_id=1787537192 instance=ExtResource("2_pbw6q")]
+position = Vector2(320, 929)
+
+[node name="BasePeg165" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="161" unique_id=1513813021 instance=ExtResource("2_pbw6q")]
+position = Vector2(299, 860)
+
+[node name="BasePeg166" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="162" unique_id=692329073 instance=ExtResource("2_pbw6q")]
+position = Vector2(423, 971)
+
+[node name="BasePeg167" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="163" unique_id=1727463573 instance=ExtResource("2_pbw6q")]
+position = Vector2(442, 856)
+
+[node name="BasePeg168" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="164" unique_id=2114391127 instance=ExtResource("2_pbw6q")]
+position = Vector2(517, 802)
+
+[node name="BasePeg169" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="165" unique_id=348284977 instance=ExtResource("2_pbw6q")]
+position = Vector2(377, 870)
+
+[node name="BasePeg170" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="166" unique_id=1130052817 instance=ExtResource("2_pbw6q")]
+position = Vector2(344, 823)
+
+[node name="BasePeg171" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="167" unique_id=69735155 instance=ExtResource("2_pbw6q")]
+position = Vector2(344, 823)
+
+[node name="BasePeg172" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="168" unique_id=360147910 instance=ExtResource("2_pbw6q")]
+position = Vector2(506, 923)
+
+[node name="BasePeg173" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="169" unique_id=1797220603 instance=ExtResource("2_pbw6q")]
+position = Vector2(237, 881)
+
+[node name="BasePeg7" parent="TestLevel/pegs" parent_id_path=PackedInt32Array(711606592, 2039554335) index="171" unique_id=1790223988 instance=ExtResource("3_v1gob")]
+position = Vector2(1175, 548)
+
+[node name="StateManager" type="Node" parent="." unique_id=83516176]
+script = ExtResource("2_idj7w")
+
+[node name="ScoringManager" type="Node" parent="." unique_id=1338311271]
+script = ExtResource("3_kln2b")
+
+[editable path="TestLevel"]

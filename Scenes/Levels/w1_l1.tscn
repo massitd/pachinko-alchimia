@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://ytshcwe52blq"]
+
+[ext_resource type="PackedScene" uid="uid://d1nlr8h276vja" path="res://Scenes/Levels/base_level.tscn" id="1_iy2dn"]
+[ext_resource type="PackedScene" uid="uid://dxuacodiqvnxu" path="res://Scenes/objects/pegs/rect_peg.tscn" id="2_w43yh"]
+[ext_resource type="Resource" uid="uid://08v4cbte1ojv" path="res://types/peg_types/base_peg.tres" id="3_eqbsm"]
+[ext_resource type="PackedScene" uid="uid://gdivvcbpeggy" path="res://Scenes/objects/pegs/peg.tscn" id="3_j2ixp"]
+[ext_resource type="Resource" uid="uid://c5yq2ei2iquxo" path="res://types/peg_types/mult_peg.tres" id="5_wmgh6"]
+
+[node name="BaseLevel" unique_id=1326825278 instance=ExtResource("1_iy2dn")]
+
+[node name="BasePeg" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="0" unique_id=1558433380 instance=ExtResource("2_w43yh")]
+position = Vector2(791.00006, 456.00003)
+rotation = -0.8322282
+scale = Vector2(0.99999994, 0.99999994)
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg2" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="1" unique_id=205921981 instance=ExtResource("2_w43yh")]
+position = Vector2(741, 493)
+rotation = -0.43711957
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg3" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="2" unique_id=1483805124 instance=ExtResource("2_w43yh")]
+position = Vector2(681, 515)
+rotation = -0.25441176
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg4" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="3" unique_id=1679235583 instance=ExtResource("3_j2ixp")]
+position = Vector2(627, 499)
+peg_type = ExtResource("5_wmgh6")
+
+[node name="BasePeg5" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="4" unique_id=1607973834 instance=ExtResource("2_w43yh")]
+position = Vector2(1187, 481)
+rotation = 0.611851
+scale = Vector2(0.99999994, 0.99999994)
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg6" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="5" unique_id=593569651 instance=ExtResource("2_w43yh")]
+position = Vector2(1245, 507)
+rotation = 0.2953323
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg7" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="6" unique_id=503751075 instance=ExtResource("2_w43yh")]
+position = Vector2(1308.0001, 509.00006)
+rotation = -0.25441176
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg8" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="7" unique_id=53718639 instance=ExtResource("3_j2ixp")]
+position = Vector2(1345, 468)
+peg_type = ExtResource("5_wmgh6")
+
+[node name="BasePeg13" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="8" unique_id=1692982345 instance=ExtResource("2_w43yh")]
+position = Vector2(1215, 653)
+rotation = 3.7179146
+scale = Vector2(0.99999994, 0.99999994)
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg14" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="9" unique_id=1689448399 instance=ExtResource("2_w43yh")]
+position = Vector2(1273, 679)
+rotation = 3.4013958
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg15" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="10" unique_id=115551765 instance=ExtResource("2_w43yh")]
+position = Vector2(1336.0001, 681.00006)
+rotation = 2.851652
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg16" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="11" unique_id=373624574 instance=ExtResource("3_j2ixp")]
+position = Vector2(1373, 640)
+rotation = 3.1060636
+peg_type = ExtResource("5_wmgh6")
+
+[node name="BasePeg9" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="12" unique_id=1121189283 instance=ExtResource("2_w43yh")]
+position = Vector2(652, 689)
+rotation = -0.8322282
+scale = Vector2(0.99999994, 0.99999994)
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg10" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="13" unique_id=334152578 instance=ExtResource("2_w43yh")]
+position = Vector2(602, 726)
+rotation = -0.43711957
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg11" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="14" unique_id=441143688 instance=ExtResource("2_w43yh")]
+position = Vector2(542, 748)
+rotation = -0.25441176
+peg_type = ExtResource("3_eqbsm")
+
+[node name="BasePeg12" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="15" unique_id=1287684909 instance=ExtResource("3_j2ixp")]
+position = Vector2(488, 732)
+peg_type = ExtResource("5_wmgh6")

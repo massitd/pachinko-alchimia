@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ce0pce6gqlpo5"]
+
+[ext_resource type="Script" uid="uid://dyq22asplq3fc" path="res://scripts/main.gd" id="1_jw32o"]
+[ext_resource type="PackedScene" uid="uid://bbv6uxqxw8pdw" path="res://Scenes/menus/main_menu.tscn" id="7_jw32o"]
+
+[node name="Main" type="Node" unique_id=94884248]
+script = ExtResource("1_jw32o")
+
+[node name="CurrentScreen" type="Node" parent="." unique_id=1107135022]
+
+[node name="MainMenu" parent="CurrentScreen" unique_id=1817388258 instance=ExtResource("7_jw32o")]

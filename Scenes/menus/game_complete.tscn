@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://beruqrt1fdsq7"]
+
+[ext_resource type="Script" uid="uid://b1y3tn1xnyag" path="res://scripts/game_complete.gd" id="1_5qfb0"]
+
+[node name="game_complete" type="Node" unique_id=1817388258]
+script = ExtResource("1_5qfb0")
+
+[node name="menu return" type="Button" parent="." unique_id=1768713893]
+offset_left = 728.0
+offset_top = 601.0
+offset_right = 1038.2184
+offset_bottom = 749.15063
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="menu return" unique_id=246196582]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 39.0
+offset_right = 230.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 30
+text = "back to menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1699593168]
+offset_left = 797.0
+offset_top = 284.0
+offset_right = 1042.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 100
+text = "you win!"
+
+[connection signal="pressed" from="menu return" to="." method="_on_menu_return_pressed"]
+[connection signal="pressed" from="menu return" to="." method="_on_start_button_pressed"]

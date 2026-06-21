@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dxuacodiqvnxu"]
+
+[ext_resource type="Script" uid="uid://du2o2b4vxwmmd" path="res://scripts/peg.gd" id="1_2maj4"]
+[ext_resource type="Texture2D" uid="uid://bgt435ofb0l7u" path="res://Assets/placeholder_rect_peg.png" id="2_2maj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1117a"]
+size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcks8"]
+size = Vector2(40, 20)
+
+[node name="BasePeg" type="StaticBody2D" unique_id=1558433380]
+script = ExtResource("1_2maj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1324932666]
+shape = SubResource("RectangleShape2D_1117a")
+
+[node name="Peg" type="Sprite2D" parent="." unique_id=1642497540]
+modulate = Color(1, 0.32941177, 0.38039216, 1)
+position = Vector2(1.7881393e-06, 1.5832484e-07)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_2maj4")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1830941441]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1904219860]
+shape = SubResource("RectangleShape2D_rcks8")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
