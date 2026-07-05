@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="rouge peggle"
-run/main_scene="uid://ce0pce6gqlpo5"
+run/main_scene="res://Scenes/Levels/test_scene.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
