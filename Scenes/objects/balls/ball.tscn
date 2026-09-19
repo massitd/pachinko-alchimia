@@ -12,6 +12,7 @@ radius = 8.0
 
 [node name="base_ball" type="RigidBody2D" unique_id=789754571]
 physics_material_override = SubResource("PhysicsMaterial_d10cq")
+continuous_cd = 1
 linear_damp_mode = 1
 script = ExtResource("1_d10cq")
 
