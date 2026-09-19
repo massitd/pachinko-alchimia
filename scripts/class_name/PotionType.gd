@@ -6,10 +6,10 @@ extends Resource
 
 @export var quality: Alchemy.Quality = Alchemy.Quality.HOT
 
-## How much this potion pushes a peg's meter per second, per fluid particle
-## the peg is currently near. Tune low — a peg sitting in a dense splash
-## should ramp up over real time, not slam to max in one frame.
-@export var push_rate: float = 0.5
+## Flat, one-time amount this potion pushes a peg's meter per fluid particle
+## the peg is near. Each particle pays out once per splash, so a splash's total
+## effect on a peg caps at (particles it was ever near) * push_per_particle.
+@export var push_per_particle: float = 0.01
 
 ## Radius (world units) of the fluid burst at shatter.
 @export var splash_radius: float = 40.0

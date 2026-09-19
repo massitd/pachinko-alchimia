@@ -18,7 +18,11 @@ class_name PotionFluidPool
 @export var fade_duration: float = 1.0
 
 var _quality: Alchemy.Quality
-var _push_rate: float
+var _push_per_particle: float
+
+## Increments on every register_splash(). Pegs compare it against the last id
+## they were credited for, so each splash gives them a fresh one-time budget.
+var splash_id: int = 0
 
 var _age := 0.0
 var _fading := false
@@ -58,9 +62,10 @@ func _set_opacity(opacity: float) -> void:
 ## fall/spread under gravity and collision alone — this build's Fluid2D
 ## confirmed does not expose particle velocity control, so there's no
 ## outward "burst" push at creation, just a dropped blob.
-func register_splash(global_pos: Vector2, radius: float, quality: Alchemy.Quality, push_rate: float) -> void:
+func register_splash(global_pos: Vector2, radius: float, quality: Alchemy.Quality, push_per_particle: float) -> void:
 	_quality = quality
-	_push_rate = push_rate
+	_push_per_particle = push_per_particle
+	splash_id += 1
 	_age = 0.0
 	_fading = false
 	_set_opacity(1.0)
@@ -117,4 +122,4 @@ func sample_push(global_pos: Vector2, sample_radius: float) -> Dictionary:
 
 	if count == 0:
 		return {}
-	return {"quality": _quality, "push_rate": _push_rate, "count": count}
+	return {"quality": _quality, "push_per_particle": _push_per_particle, "count": count, "splash_id": splash_id}

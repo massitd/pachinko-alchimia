@@ -22,6 +22,10 @@ const CAP := 1.0
 @export var sample_interval: float = 0.1
 
 var _sample_accum := 0.0
+
+# Count-delta crediting: each fluid particle pushes this peg once per splash.
+var _credited_splash_id := -1
+var _credited_count := 0
 var _flash_tween: Tween
 
 
@@ -36,19 +40,25 @@ func _process(delta: float) -> void:
 	_sample_accum += delta
 	if _sample_accum < sample_interval:
 		return
-	var dt := _sample_accum
 	_sample_accum = 0.0
-	_sample_fluids(dt)
+	_sample_fluids()
 
 
-func _sample_fluids(dt: float) -> void:
+func _sample_fluids() -> void:
 	var pool = get_tree().get_first_node_in_group("potion_fluid_pool")
 	if pool == null:
 		return
 	var result: Dictionary = pool.sample_push(global_position, wetting_radius)
 	if result.is_empty():
 		return
-	apply_quality(result["quality"], result["count"] * result["push_rate"] * dt)
+	if result["splash_id"] != _credited_splash_id:
+		_credited_splash_id = result["splash_id"]
+		_credited_count = 0
+	var new_particles: int = result["count"] - _credited_count
+	if new_particles <= 0:
+		return
+	apply_quality(result["quality"], new_particles * result["push_per_particle"])
+	_credited_count = result["count"]
 
 
 # --- quality model -----------------------------------------------------------

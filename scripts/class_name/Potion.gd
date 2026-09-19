@@ -48,7 +48,7 @@ func _shatter() -> void:
 				global_position,
 				potion_type.splash_radius,
 				potion_type.quality,
-				potion_type.push_rate
+				potion_type.push_per_particle
 			)
 		else:
 			push_warning("No PotionFluidPool found in the 'potion_fluid_pool' group — splash skipped.")
