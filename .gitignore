@@ -1,4 +1,11 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-.godot/
+
+# OS / editor junk
+.DS_Store
+*~
+.xdp-qt_temp.*
+
+# Claude Code worktrees (embedded repos)
+.claude/worktrees/
