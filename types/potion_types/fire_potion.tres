@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotionType" format=3 uid="uid://gsev1dgxhpar"]
+
+[ext_resource type="PackedScene" uid="uid://cm5w5pxae75vt" path="res://Scenes/objects/potions/potion.tscn" id="1_qimg2"]
+[ext_resource type="Script" uid="uid://cliboavb8gfoy" path="res://scripts/class_name/PotionType.gd" id="1_s3gri"]
+
+[resource]
+script = ExtResource("1_s3gri")
+scene = ExtResource("1_qimg2")
+metadata/_custom_type_script = "uid://cliboavb8gfoy"

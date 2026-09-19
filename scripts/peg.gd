@@ -1,8 +1,7 @@
 extends StaticBody2D
+class_name Peg
 
 enum State { UNHIT, HIT, CLEARED }
-enum Quality { HOT, COLD, DRY, WET }
-enum Element { NEUTRAL, FIRE, EARTH, WATER, AIR }
 
 # temperature: hot = positive, cold = negative
 # moisture:    dry = positive, wet  = negative
@@ -14,23 +13,52 @@ const CAP := 1.0
 
 @export var peg_type: PegType
 
+# --- fluid sampling ----------------------------------------------------------
+
+## How far a peg reaches out to sample fluid particles.
+@export var wetting_radius: float = 24.0
+
+## How often to sample (seconds).
+@export var sample_interval: float = 0.1
+
+var _sample_accum := 0.0
+
 
 func _ready() -> void:
 	Events.resolve_turn.connect(_resolve)
 	_refresh_visual()
 
 
+func _process(delta: float) -> void:
+	_sample_accum += delta
+	if _sample_accum < sample_interval:
+		return
+	var dt := _sample_accum
+	_sample_accum = 0.0
+	_sample_fluids(dt)
+
+
+func _sample_fluids(dt: float) -> void:
+	var pool = get_tree().get_first_node_in_group("potion_fluid_pool")
+	if pool == null:
+		return
+	var result: Dictionary = pool.sample_push(global_position, wetting_radius)
+	if result.is_empty():
+		return
+	apply_quality(result["quality"], result["count"] * result["push_rate"] * dt)
+
+
 # --- quality model -----------------------------------------------------------
 
 # Derived from the two meters; single source of truth, never stored.
 # NEUTRAL until BOTH axes are off-center (a hot-but-not-dry peg isn't Fire yet).
-func get_element() -> Element:
+func get_element() -> Alchemy.Element:
 	if is_zero_approx(temperature) or is_zero_approx(moisture):
-		return Element.NEUTRAL
+		return Alchemy.Element.NEUTRAL
 	if temperature > 0.0:
-		return Element.FIRE if moisture > 0.0 else Element.AIR
+		return Alchemy.Element.FIRE if moisture > 0.0 else Alchemy.Element.AIR
 	else:
-		return Element.EARTH if moisture > 0.0 else Element.WATER
+		return Alchemy.Element.EARTH if moisture > 0.0 else Alchemy.Element.WATER
 
 
 func get_magnitude() -> float:
@@ -38,12 +66,12 @@ func get_magnitude() -> float:
 
 
 # The single entry point for every meter change.
-func apply_quality(quality: Quality, amount: float) -> void:
+func apply_quality(quality: Alchemy.Quality, amount: float) -> void:
 	match quality:
-		Quality.HOT:  temperature += amount
-		Quality.COLD: temperature -= amount
-		Quality.DRY:  moisture += amount
-		Quality.WET:  moisture -= amount
+		Alchemy.Quality.HOT:  temperature += amount
+		Alchemy.Quality.COLD: temperature -= amount
+		Alchemy.Quality.DRY:  moisture += amount
+		Alchemy.Quality.WET:  moisture -= amount
 	temperature = clampf(temperature, -CAP, CAP)
 	moisture = clampf(moisture, -CAP, CAP)
 	_refresh_visual()
@@ -51,13 +79,17 @@ func apply_quality(quality: Quality, amount: float) -> void:
 
 # --- visuals -----------------------------------------------------------------
 
-func _color_for_element(e: Element) -> Color:
+# Peg-specific: element colors plus the peg_type fallback for NEUTRAL, so this
+# stays here rather than moving wholesale into Alchemy (which only knows
+# about qualities/elements in the abstract, not a particular peg's resting
+# color). Worth revisiting if Alchemy grows an Element color helper later.
+func _color_for_element(e: Alchemy.Element) -> Color:
 	match e:
-		Element.FIRE:  return Color("e8462a")  # warm red
-		Element.WATER: return Color("2a7de8")  # blue
-		Element.EARTH: return Color("5aa657")  # green
-		Element.AIR:   return Color("dfe9f0")  # pale steam
-		_:             return peg_type.color if peg_type else Color.WHITE
+		Alchemy.Element.FIRE:  return Color("e8462a")  # warm red
+		Alchemy.Element.WATER: return Color("2a7de8")  # blue
+		Alchemy.Element.EARTH: return Color("5aa657")  # green
+		Alchemy.Element.AIR:   return Color("dfe9f0")  # pale steam
+		_:                     return peg_type.color if peg_type else Color.WHITE  # NEUTRAL → resting color
 
 
 func _refresh_visual() -> void:

@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var state_manager = $"../StateManager"
-
-const BALL = preload("res://Scenes/objects/balls/ball.tscn")
+@onready var potion_queue = $"../PotionQueue"
+@onready var ball_queue = $"../BallQueue"
 
 var last_valid_angle: float = 0.0
 var angle_min = -PI / 2
@@ -18,6 +18,9 @@ var trajectory_steps := 150
 var stub_steps := 12
 
 var _cast_shape := CircleShape2D.new()
+
+func _can_fire_anything() -> bool:
+	return state_manager.can_shoot() or state_manager.can_fire_potion()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,7 +41,7 @@ func _process(delta: float) -> void:
 	
 	$cannon.rotation = lerp_angle($cannon.rotation, last_valid_angle, aim_weight*delta)
 	
-	if state_manager and state_manager.can_shoot():
+	if _can_fire_anything():
 		update_trajectory()
 	
 func _on_state_changed(new_state) -> void:
@@ -46,7 +49,7 @@ func _on_state_changed(new_state) -> void:
 
 # enables and disables aiming ui based on state 
 func _aim_visibility() -> void:
-	if state_manager and state_manager.can_shoot():
+	if _can_fire_anything():
 		$marker.visible = true
 		$AimLine.visible = true
 	else:
@@ -106,28 +109,29 @@ func update_trajectory() -> void:
 	$AimLine.points = points
 	
 func _input(event):
-	if event is InputEventMouseButton:
-		if state_manager and state_manager.can_shoot():
-			if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-				spawn_ball()
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if state_manager.can_fire_potion():
+			_deploy(potion_queue.pop_next(), Events.potion_fired)
+		elif state_manager.can_shoot():
+			_deploy(ball_queue.pop_next(), Events.ball_fired)
 
-## Fires balls from launcher
-func spawn_ball() -> void:
-	
-	# create new instance of ball scene
-	var ball = BALL.instantiate()
-	
-	# set where ball appears
-	ball.position = $cannon/ball_spawn.global_position
-	get_parent().add_child(ball)
-	
-	# calculate direction as vector
-	var direction = Vector2(cos($cannon.rotation + PI / 2), sin($cannon.rotation + PI / 2))
-	
-	# push ball
-	ball.apply_impulse(direction * impulse)
-	
-	Events.ball_fired.emit(ball)
+## Generic launch: instantiate whatever scene the queue entry points to,
+## configure it if it knows how to configure itself, launch it, announce it.
+## Works for anything thrown from the cannon — not a fit for gadgets later,
+## since those get placed rather than launched.
+func _deploy(entry: Resource, fired_signal: Signal) -> void:
+	var instance = entry.scene.instantiate()
+
+	if instance.has_method("set_deploy_type"):
+		instance.set_deploy_type(entry)
+
+	instance.position = $cannon/ball_spawn.global_position
+	get_parent().add_child(instance)
+
+	var direction = get_launch_direction()
+	instance.apply_impulse(direction * impulse)
+
+	fired_signal.emit(instance)
 
 ## Kills balls that enter the bottom of the screen
 func _on_kill_zone_body_entered(body: Node2D) -> void:

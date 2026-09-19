@@ -3,7 +3,7 @@ class_name Fluid2DRenderer
 extends MultiMeshInstance2D
 
 @export var fluid: Fluid2D
-@export var color: Color = Color(0.8, 0.8, 0.8, 0.3)
+@export var color: Color = Color(0.078, 0.4, 0.502, 1.0)
 @export var mesh_scale: Vector2 = Vector2(5, 5)
 
 

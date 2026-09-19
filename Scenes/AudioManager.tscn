@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dre2rpy3vpflw"]
 
-[ext_resource type="Script" uid="uid://bhasbdmmlxse6" path="res://scripts/audio_manager.gd" id="1_dygvs"]
+[ext_resource type="Script" uid="uid://bhasbdmmlxse6" path="res://scripts/managers/audio_manager.gd" id="1_dygvs"]
 [ext_resource type="AudioStream" uid="uid://d1mrjh7pyhxgt" path="res://sounds/Peg Hits/Bubble/Bass Boost/Bubble_Bass_2.wav" id="2_yq78e"]
 [ext_resource type="AudioStream" uid="uid://ccams76fdmnmy" path="res://sounds/Peg Hits/Plastic/With Bass Boost/Plastic_Bass_2.wav" id="3_u6owb"]
 [ext_resource type="AudioStream" uid="uid://dwj8utgwwm6kf" path="res://sounds/Peg Hits/Bubble/No Bass Boost/Bubble_No Bass_3.wav" id="3_yq78e"]
