@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cm5w5pxae75vt"]
+
+[ext_resource type="Script" uid="uid://baty4tj0cjkkw" path="res://scripts/class_name/Potion.gd" id="1_367ky"]
+[ext_resource type="Texture2D" uid="uid://fraccqs4ocy8" path="res://Assets/potion.png" id="2_367ky"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d10cq"]
+friction = 0.0
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avqsf"]
+radius = 8.0
+
+[node name="base_potion" type="RigidBody2D" unique_id=789754571]
+physics_material_override = SubResource("PhysicsMaterial_d10cq")
+linear_damp_mode = 1
+script = ExtResource("1_367ky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1324932666]
+shape = SubResource("CircleShape2D_avqsf")
+
+[node name="potion" type="Sprite2D" parent="." unique_id=1642497540]
+modulate = Color(0.9764706, 0.47058824, 0, 1)
+position = Vector2(0, -3.4999995)
+scale = Vector2(0.18, 0.22999997)
+texture = ExtResource("2_367ky")

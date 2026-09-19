@@ -6,6 +6,7 @@ uniform vec4 test_color: source_color = vec4(1,0,1,1);
 
 uniform float speed = 0.1; // Speed of movement
 uniform float amplitude = 0.1; // Amplitude of movement
+uniform float fade: hint_range(0.0, 1.0) = 1.0; // Overall opacity multiplier, 1 = fully visible
 
 uniform sampler2D water_texture;
 
@@ -15,7 +16,7 @@ void fragment(){
 
 	float color_distance = screen_tex.r;
 	if (color_distance > threshold) {
-		COLOR = texture(water_texture, SCREEN_UV + displacement).rgba * water_color;
+		COLOR = texture(water_texture, SCREEN_UV + displacement).rgba * water_color * vec4(1.0, 1.0, 1.0, fade);
 	} else {
 		COLOR = vec4(0.0);
 	}

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*uid://bmehuuhx5ntuh"
 GameFlow="*uid://bcs4h33l7ct5f"
+RunState="*uid://yi8gdit3rlgi"
 AudioManager="*uid://dre2rpy3vpflw"
 
 [display]
@@ -32,6 +33,7 @@ common/physics_ticks_per_second=120
 2d/physics_engine="Rapier2D"
 3d/physics_engine="Jolt Physics"
 2d/default_gravity=900.0
+rapier/fluid/fluid_particle_radius_2d=3.0
 
 [rendering]
 

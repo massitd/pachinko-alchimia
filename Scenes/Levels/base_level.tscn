@@ -5,10 +5,14 @@
 [ext_resource type="Script" uid="uid://b2284tcvcojm1" path="res://scripts/launcher.gd" id="2_lai3q"]
 [ext_resource type="Texture2D" uid="uid://dixedtjdgpebj" path="res://Assets/placeholder_launcher_base.png" id="3_lai3q"]
 [ext_resource type="Texture2D" uid="uid://c1r6dpdstq60a" path="res://Assets/placeholder_ball.png" id="5_30ow2"]
-[ext_resource type="Script" uid="uid://cr62yaatelk0g" path="res://scripts/state_manager.gd" id="6_iemmg"]
-[ext_resource type="Script" uid="uid://3k00h7two4k2" path="res://scripts/scoring_manager.gd" id="7_3b8rg"]
+[ext_resource type="Script" uid="uid://cr62yaatelk0g" path="res://scripts/managers/state_manager.gd" id="6_iemmg"]
+[ext_resource type="Script" uid="uid://3k00h7two4k2" path="res://scripts/managers/scoring_manager.gd" id="7_3b8rg"]
 [ext_resource type="PackedScene" uid="uid://bjhu0ybyx5t3d" path="res://Scenes/Hud.tscn" id="8_hr04v"]
 [ext_resource type="Script" uid="uid://nfh4wk8th5oe" path="res://scripts/hud.gd" id="9_71eip"]
+[ext_resource type="Script" uid="uid://onu0e36jldp7" path="res://scripts/class_name/DeployQueue.gd" id="10_71eip"]
+[ext_resource type="Script" uid="uid://qo8bibm1ntwf" path="res://addons/godot-rapier2d/fluid_2d_shader_renderer.gd" id="13_3o7cg"]
+[ext_resource type="Material" uid="uid://cysnk7s2ll173" path="res://addons/godot-rapier2d/water_shader.tres" id="14_2a4j4"]
+[ext_resource type="Script" uid="uid://exnldom42h7s" path="res://scripts/potion_fluid_pool.gd" id="16_bi03b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0vl6"]
 size = Vector2(1440, 10)
@@ -92,5 +96,31 @@ script = ExtResource("7_3b8rg")
 script = ExtResource("9_71eip")
 
 [node name="Pegs" type="Node2D" parent="." unique_id=1184763689]
+
+[node name="PotionQueue" type="Node" parent="." unique_id=1821064655]
+script = ExtResource("10_71eip")
+
+[node name="BallQueue" type="Node" parent="." unique_id=561606025]
+script = ExtResource("10_71eip")
+
+[node name="GadgetQueue" type="Node" parent="." unique_id=1158681368]
+script = ExtResource("10_71eip")
+
+[node name="Fluid2D" type="Fluid2D" parent="." unique_id=236705163]
+lifetime = 100.0
+script = ExtResource("16_bi03b")
+fade_delay = 10.0
+fade_duration = 1.5
+
+[node name="Fluid2DShaderRenderer" type="CanvasLayer" parent="Fluid2D" unique_id=93062881 node_paths=PackedStringArray("fluid", "camera")]
+script = ExtResource("13_3o7cg")
+fluid = NodePath("..")
+camera = NodePath("Camera2D")
+water_material = ExtResource("14_2a4j4")
+mesh_scale = Vector2(1, 1)
+metadata/_custom_type_script = "uid://qo8bibm1ntwf"
+
+[node name="Camera2D" type="Camera2D" parent="Fluid2D/Fluid2DShaderRenderer" unique_id=2134775227]
+enabled = false
 
 [connection signal="body_entered" from="walls/killZone" to="launcher" method="_on_kill_zone_body_entered"]

@@ -10,10 +10,6 @@ extends CanvasLayer
 @export var water_material: Material = load("res://addons/godot-rapier2d/water_shader.tres")
 @export var mesh_scale: Vector2 = Vector2(5, 5)
 var fluid_renderer: Fluid2DRenderer
-var inside_camera: Camera2D:
-	set(value):
-		inside_camera = value
-		update_configuration_warnings()
 var sub_viewport_container: SubViewportContainer
 var sub_viewport: SubViewport
 
@@ -27,15 +23,23 @@ func _get_configuration_warnings():
 	return warnings
 
 
+## Size of the area the fluid is drawn over: the real viewport in game, the
+## project's base size in the editor (where the viewport is the editor's pan/zoom view).
+func _target_size() -> Vector2:
+	if Engine.is_editor_hint():
+		return Vector2(
+			ProjectSettings.get("display/window/size/viewport_width"),
+			ProjectSettings.get("display/window/size/viewport_height")
+		)
+	return get_viewport().get_visible_rect().size
+
+
 func _create_subviewport_container():
 	sub_viewport_container = SubViewportContainer.new()
 	sub_viewport_container.name = "SubViewportContainer"
 	add_child(sub_viewport_container)
 	sub_viewport_container.material = water_material
-	sub_viewport_container.size = Vector2(
-		ProjectSettings.get("display/window/size/viewport_width"),
-		ProjectSettings.get("display/window/size/viewport_height")
-	)
+	sub_viewport_container.size = _target_size()
 
 
 func _create_subviewport():
@@ -55,33 +59,28 @@ func _create_fluid_renderer():
 	sub_viewport.add_child(fluid_renderer)
 
 
-func _create_inside_camera():
-	inside_camera = Camera2D.new()
-	inside_camera.name = "Camera2D"
-	inside_camera.material = water_material
-	sub_viewport.add_child(inside_camera)
-
-
 func _ready() -> void:
 	_create_subviewport_container()
 	_create_subviewport()
 	_create_fluid_renderer()
-	_create_inside_camera()
 	if fluid:
 		fluid.debug_draw = false
 
 
 func _process(_delta: float) -> void:
-	if camera != null:
-		inside_camera.offset = camera.offset
-		inside_camera.zoom = camera.zoom
-		inside_camera.transform = camera.transform
-		sub_viewport_container.scale = Vector2(1.0 / camera.zoom.x, 1.0 / camera.zoom.y)
-		sub_viewport_container.position = camera.global_position
-		sub_viewport.size = sub_viewport_container.size
-		if camera.anchor_mode == Camera2D.AnchorMode.ANCHOR_MODE_FIXED_TOP_LEFT:
-			sub_viewport_container.position -= sub_viewport_container.size / 2
-		if !camera.ignore_rotation:
-			sub_viewport_container.rotation = camera.global_rotation
-		else:
-			sub_viewport_container.rotation = 0
+	var size := _target_size()
+	if sub_viewport_container.size != size:
+		sub_viewport_container.size = size
+		sub_viewport.size = Vector2i(size)
+
+	if Engine.is_editor_hint():
+		# Camera2D does nothing to a SubViewport in the editor, so lay the container
+		# over the world rect around the camera and shift the canvas to match.
+		var center := camera.global_position if camera != null else size / 2.0
+		sub_viewport_container.position = center - size / 2.0
+		sub_viewport.canvas_transform = Transform2D(0.0, size / 2.0 - center)
+		return
+
+	# In game, show exactly what the main viewport's canvas shows.
+	sub_viewport_container.position = Vector2.ZERO
+	sub_viewport.canvas_transform = get_viewport().get_canvas_transform()
