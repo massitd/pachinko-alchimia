@@ -22,6 +22,7 @@ const CAP := 1.0
 @export var sample_interval: float = 0.1
 
 var _sample_accum := 0.0
+var _flash_tween: Tween
 
 
 func _ready() -> void:
@@ -30,6 +31,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if state == State.CLEARED:
+		return
 	_sample_accum += delta
 	if _sample_accum < sample_interval:
 		return
@@ -92,21 +95,41 @@ func _color_for_element(e: Alchemy.Element) -> Color:
 		_:                     return peg_type.color if peg_type else Color.WHITE  # NEUTRAL → resting color
 
 
+# Single-axis pegs (only heated, only wetted, ...) have no Element yet, but they
+# should still visibly react — tint toward the color of whichever quality is
+# strongest. Once both axes are off-center, get_element() takes over.
+func _tint_color() -> Color:
+	var element := get_element()
+	if element != Alchemy.Element.NEUTRAL:
+		return _color_for_element(element)
+	if abs(temperature) >= abs(moisture):
+		return Alchemy.color_for_quality(Alchemy.Quality.HOT if temperature > 0.0 else Alchemy.Quality.COLD)
+	return Alchemy.color_for_quality(Alchemy.Quality.DRY if moisture > 0.0 else Alchemy.Quality.WET)
+
+
+# What the sprite should show right now, meters and hit state included. Both
+# _refresh_visual() and the hit flash settle to this, so neither undoes the other.
+func _display_color() -> Color:
+	var color := peg_type.color.lerp(_tint_color(), clampf(get_magnitude(), 0.0, 1.0))
+	return color.darkened(0.5) if state == State.HIT else color
+
+
 func _refresh_visual() -> void:
-	if not peg_type:
+	# A cleared peg is fading out; a flashing one settles to _display_color()
+	# itself when done, so don't fight either tween.
+	if not peg_type or state == State.CLEARED or (_flash_tween and _flash_tween.is_running()):
 		return
-	var target := _color_for_element(get_element())
-	var t := clampf(get_magnitude(), 0.0, 1.0)
-	$Peg.modulate = peg_type.color.lerp(target, t)
+	$Peg.modulate = _display_color()
 
 
 func peg_flash() -> void:
-	var tween := create_tween()
-	tween.tween_property($Peg, "modulate", Color.GOLD, 0.01)
-	if state == State.HIT:
-		tween.tween_property($Peg, "modulate", peg_type.color.darkened(0.5), 0.3).set_delay(0.1)
-	else:
-		tween.tween_property($Peg, "modulate", peg_type.color, 0.2).set_delay(0.1)
+	if _flash_tween:
+		_flash_tween.kill()
+	_flash_tween = create_tween()
+	_flash_tween.tween_property($Peg, "modulate", Color.GOLD, 0.01)
+	# Evaluated live, so meter changes during the fade are picked up.
+	var settle_time := 0.3 if state == State.HIT else 0.2
+	_flash_tween.tween_method(func(w: float): $Peg.modulate = Color.GOLD.lerp(_display_color(), w), 0.0, 1.0, settle_time).set_delay(0.1)
 
 
 # --- hit / lifecycle ---------------------------------------------------------
@@ -127,6 +150,8 @@ func clear() -> void:
 	if state != State.HIT:
 		return
 	state = State.CLEARED
+	if _flash_tween:
+		_flash_tween.kill()
 	$CollisionShape2D.set_deferred("disabled", true)
 	var tween := get_tree().create_tween()
 	tween.tween_property($Peg, "modulate", Color.TRANSPARENT, 0.5)
