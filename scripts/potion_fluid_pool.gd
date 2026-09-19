@@ -24,6 +24,7 @@ var _age := 0.0
 var _fading := false
 var _fade_timer := 0.0
 var _water_material: ShaderMaterial
+var _base_alpha := 0.65  # the shader's own translucency, kept when tinting
 
 
 func _ready() -> void:
@@ -31,6 +32,18 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Fluid2DShaderRenderer and child.sub_viewport_container:
 			_water_material = child.sub_viewport_container.material as ShaderMaterial
+	if _water_material:
+		var current = _water_material.get_shader_parameter("water_color")
+		if current is Color:
+			_base_alpha = current.a
+
+
+## Tints the rendered water to the potion's color — the same
+## Alchemy.color_for_quality() that Potion uses for its sprite, so the liquid
+## always matches the potion type's quality.
+func _set_color(color: Color) -> void:
+	if _water_material:
+		_water_material.set_shader_parameter("water_color", Color(color.r, color.g, color.b, _base_alpha))
 
 
 ## Opacity of the rendered water, 1 = fully visible. Driven through the water
@@ -51,6 +64,7 @@ func register_splash(global_pos: Vector2, radius: float, quality: Alchemy.Qualit
 	_age = 0.0
 	_fading = false
 	_set_opacity(1.0)
+	_set_color(Alchemy.color_for_quality(quality))
 
 	var local_center := to_local(global_pos)
 	# create_circle_points() takes its radius in particle diameters, not pixels,
