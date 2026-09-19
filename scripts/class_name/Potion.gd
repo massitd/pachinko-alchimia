@@ -53,6 +53,20 @@ func _shatter() -> void:
 		else:
 			push_warning("No PotionFluidPool found in the 'potion_fluid_pool' group — splash skipped.")
 
+	_finish()
+
+
+## Called by the launcher's kill zone when a potion falls out of the board
+## without touching anything. There's no splash, but the turn phase still has
+## to end — otherwise StateManager waits forever in POTION_ACTIVE.
+func fall_out() -> void:
+	if _shattered:
+		return
+	_shattered = true
+	_finish()
+
+
+func _finish() -> void:
 	Events.potion_shattered.emit(potion_type, global_position)
 
 	_sprite.hide()

@@ -133,8 +133,11 @@ func _deploy(entry: Resource, fired_signal: Signal) -> void:
 
 	fired_signal.emit(instance)
 
-## Kills balls that enter the bottom of the screen
+## Kills balls that enter the bottom of the screen. A potion that falls out
+## ends its own phase instead (it never emits ball_lost).
 func _on_kill_zone_body_entered(body: Node2D) -> void:
-	if body is RigidBody2D:
+	if body is Potion:
+		body.fall_out()
+	elif body is RigidBody2D:
 		body.queue_free()
 		Events.ball_lost.emit(body)
