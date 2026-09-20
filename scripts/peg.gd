@@ -183,10 +183,10 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 		return
 	if state == State.UNHIT:
 		state = State.HIT
-		Events.peg_hit.emit(self)
+		Events.peg_hit.emit(self, body)
 		peg_flash()
 	elif state == State.HIT:
-		Events.peg_rehit.emit(self)
+		Events.peg_rehit.emit(self, body)
 		peg_flash()
 
 

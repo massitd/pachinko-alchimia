@@ -4,6 +4,6 @@ extends Resource
 
 @export var scene: PackedScene
 
-# Reactant element (Fire/Water/Air/Earth, per the design doc's reaction model,
-# §5) belongs here once that system exists. Nothing reads it yet — this
-# exists now purely so balls fit the same list/queue shape as potions.
+## Reactant element (design doc §5). Scoring compares this to the element of
+## each peg the ball hits via Alchemy.relationship().
+@export var element: Alchemy.Element = Alchemy.Element.NEUTRAL
