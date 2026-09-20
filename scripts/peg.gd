@@ -45,8 +45,14 @@ func _ready() -> void:
 		Alchemy.Element.EARTH: get_node_or_null("EarthParticles"),
 		Alchemy.Element.AIR:   get_node_or_null("AirParticles"),
 	}
+	# The scene leaves the particle nodes visible and emitting so they can be
+	# edited in the editor; at runtime they start hidden and fade in on demand.
 	for e in _particles:
 		_particle_weights[e] = 0.0
+		var node: GPUParticles2D = _particles[e]
+		if node:
+			node.emitting = false
+			node.modulate.a = 0.0
 	_refresh_visual()
 
 

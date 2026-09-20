@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://denu35c8evem2" path="res://Assets/placeholder_peg.png" id="1_fd3xd"]
 [ext_resource type="Script" uid="uid://du2o2b4vxwmmd" path="res://scripts/peg.gd" id="1_l6a3n"]
 [ext_resource type="Texture2D" uid="uid://4vn1mj134tvo" path="res://Assets/PNG (Transparent)/smoke_03.png" id="3_rnpij"]
-[ext_resource type="Texture2D" uid="uid://def2pgrc6gxbn" path="res://Assets/PNG (Transparent)/flame_05.png" id="4_fire"]
+[ext_resource type="Texture2D" uid="uid://cwb3gua6i74ju" path="res://Assets/PNG (Transparent)/fire_02.png" id="4_yuq02"]
 [ext_resource type="Texture2D" uid="uid://q11ktrjsr3s3" path="res://Assets/PNG (Transparent)/circle_05.png" id="5_water"]
 [ext_resource type="Texture2D" uid="uid://c8yp2s22d0i3u" path="res://Assets/PNG (Transparent)/dirt_01.png" id="6_earth"]
 
@@ -22,8 +22,11 @@ color = Color(0.69, 0.79, 0.85, 1)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fire"]
 particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 1.975, 0)
+emission_shape_scale = Vector3(2.125, 1.27, 1)
 emission_shape = 1
 emission_sphere_radius = 8.0
+spread = 0.0
 gravity = Vector3(0, -60, 0)
 scale_min = 0.05
 scale_max = 0.12
@@ -64,9 +67,8 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1904219860]
 shape = SubResource("CircleShape2D_detect")
 
-[node name="AirParticles" type="GPUParticles2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-emitting = false
+[node name="AirParticles" type="GPUParticles2D" parent="." unique_id=685582693]
+visible = false
 amount = 6
 amount_ratio = 0.665
 texture = ExtResource("3_rnpij")
@@ -74,25 +76,20 @@ lifetime = 10.04
 interp_to_end = 1.0
 process_material = SubResource("ParticleProcessMaterial_rnpij")
 
-[node name="FireParticles" type="GPUParticles2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-emitting = false
-amount = 8
-texture = ExtResource("4_fire")
+[node name="FireParticles" type="GPUParticles2D" parent="." unique_id=1522316459]
+visible = false
+texture = ExtResource("4_yuq02")
 lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_fire")
 
-[node name="WaterParticles" type="GPUParticles2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-emitting = false
-amount = 8
+[node name="WaterParticles" type="GPUParticles2D" parent="." unique_id=1218349578]
+visible = false
 texture = ExtResource("5_water")
 lifetime = 1.6
 process_material = SubResource("ParticleProcessMaterial_water")
 
-[node name="EarthParticles" type="GPUParticles2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-emitting = false
+[node name="EarthParticles" type="GPUParticles2D" parent="." unique_id=1901920941]
+visible = false
 amount = 6
 texture = ExtResource("6_earth")
 lifetime = 3.0
