@@ -19,6 +19,10 @@ var stub_steps := 12
 
 var _cast_shape := CircleShape2D.new()
 
+# The queue entry the marker currently mirrors; the marker is only rebuilt when
+# the next thing to fire changes.
+var _marker_entry: Resource
+
 func _can_fire_anything() -> bool:
 	return state_manager.can_shoot() or state_manager.can_fire_potion()
 
@@ -42,8 +46,41 @@ func _process(delta: float) -> void:
 	$cannon.rotation = lerp_angle($cannon.rotation, last_valid_angle, aim_weight*delta)
 	
 	if _can_fire_anything():
+		_refresh_marker()
 		update_trajectory()
 	
+## Whatever a click would fire right now, without popping it.
+func _next_entry() -> Resource:
+	if state_manager.can_fire_potion():
+		return potion_queue.peek_next()
+	if state_manager.can_shoot():
+		return ball_queue.peek_next()
+	return null
+
+## Makes the aim marker look like the thing about to be fired: the sprite comes
+## from the entry's own scene (so it matches in-flight size and offset), the
+## tint from the type — quality color for potions, BallType.color for balls.
+func _refresh_marker() -> void:
+	var entry := _next_entry()
+	if entry == null or entry == _marker_entry:
+		return
+	_marker_entry = entry
+
+	var preview: Node = entry.scene.instantiate()
+	var sprites: Array = preview.find_children("*", "Sprite2D", true, false)
+	if not sprites.is_empty():
+		var sprite: Sprite2D = sprites[0]
+		$marker.texture = sprite.texture
+		$marker.scale = sprite.scale
+		$marker.offset = sprite.offset + sprite.position / sprite.scale
+		if entry is PotionType:
+			$marker.modulate = Alchemy.color_for_quality(entry.quality)
+		elif entry is BallType:
+			$marker.modulate = entry.color
+		else:
+			$marker.modulate = sprite.modulate
+	preview.free()
+
 func _on_state_changed(new_state) -> void:
 	_aim_visibility()
 

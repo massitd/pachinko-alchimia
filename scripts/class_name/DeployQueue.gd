@@ -14,6 +14,10 @@ func queue_item(item: Resource) -> void:
 func has_next() -> bool:
 	return not _queued.is_empty()
 
+## Next item without removing it (null if empty), e.g. for the aim preview.
+func peek_next() -> Resource:
+	return _queued[0] if not _queued.is_empty() else null
+
 func pop_next() -> Resource:
 	return _queued.pop_front()
 
