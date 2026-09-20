@@ -9,38 +9,39 @@
 [node name="BaseLevel" unique_id=1326825278 instance=ExtResource("1_iy2dn")]
 
 [node name="BasePeg" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="0" unique_id=1558433380 instance=ExtResource("2_w43yh")]
-position = Vector2(791.00006, 456.00003)
-rotation = -0.8322282
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(848, 552)
+rotation = -1.5837376
+scale = Vector2(2.666516, 0.99999994)
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg2" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="1" unique_id=205921981 instance=ExtResource("2_w43yh")]
-position = Vector2(741, 493)
-rotation = -0.43711957
+position = Vector2(783.99994, 537)
+rotation = -1.5922805
+scale = Vector2(2.5910378, 1)
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg3" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="2" unique_id=1483805124 instance=ExtResource("2_w43yh")]
-position = Vector2(681, 515)
+position = Vector2(770, 401)
 rotation = -0.25441176
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg4" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="3" unique_id=1679235583 instance=ExtResource("3_j2ixp")]
-position = Vector2(627, 499)
+position = Vector2(820, 690)
 peg_type = ExtResource("5_wmgh6")
 
 [node name="BasePeg5" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="4" unique_id=1607973834 instance=ExtResource("2_w43yh")]
-position = Vector2(1187, 481)
+position = Vector2(1222, 389)
 rotation = 0.611851
 scale = Vector2(0.99999994, 0.99999994)
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg6" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="5" unique_id=593569651 instance=ExtResource("2_w43yh")]
-position = Vector2(1245, 507)
+position = Vector2(1172, 585)
 rotation = 0.2953323
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg7" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="6" unique_id=503751075 instance=ExtResource("2_w43yh")]
-position = Vector2(1308.0001, 509.00006)
+position = Vector2(1323.0001, 552)
 rotation = -0.25441176
 peg_type = ExtResource("3_eqbsm")
 
@@ -49,42 +50,42 @@ position = Vector2(1345, 468)
 peg_type = ExtResource("5_wmgh6")
 
 [node name="BasePeg13" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="8" unique_id=1692982345 instance=ExtResource("2_w43yh")]
-position = Vector2(1215, 653)
+position = Vector2(1110.9999, 789)
 rotation = 3.7179146
 scale = Vector2(0.99999994, 0.99999994)
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg14" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="9" unique_id=1689448399 instance=ExtResource("2_w43yh")]
-position = Vector2(1273, 679)
+position = Vector2(1074.9999, 453)
 rotation = 3.4013958
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg15" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="10" unique_id=115551765 instance=ExtResource("2_w43yh")]
-position = Vector2(1336.0001, 681.00006)
+position = Vector2(1323, 769)
 rotation = 2.851652
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg16" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="11" unique_id=373624574 instance=ExtResource("3_j2ixp")]
-position = Vector2(1373, 640)
+position = Vector2(1390.0001, 674.99994)
 rotation = 3.1060636
 peg_type = ExtResource("5_wmgh6")
 
 [node name="BasePeg9" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="12" unique_id=1121189283 instance=ExtResource("2_w43yh")]
-position = Vector2(652, 689)
+position = Vector2(760.0001, 794)
 rotation = -0.8322282
 scale = Vector2(0.99999994, 0.99999994)
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg10" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="13" unique_id=334152578 instance=ExtResource("2_w43yh")]
-position = Vector2(602, 726)
+position = Vector2(654.00006, 567)
 rotation = -0.43711957
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg11" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="14" unique_id=441143688 instance=ExtResource("2_w43yh")]
-position = Vector2(542, 748)
+position = Vector2(573, 776)
 rotation = -0.25441176
 peg_type = ExtResource("3_eqbsm")
 
 [node name="BasePeg12" parent="Pegs" parent_id_path=PackedInt32Array(1184763689) index="15" unique_id=1287684909 instance=ExtResource("3_j2ixp")]
-position = Vector2(488, 732)
+position = Vector2(1040, 661)
 peg_type = ExtResource("5_wmgh6")

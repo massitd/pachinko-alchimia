@@ -6,4 +6,6 @@
 [resource]
 script = ExtResource("1_s3gri")
 scene = ExtResource("1_qimg2")
+push_per_particle = 0.1
+splash_radius = 10.0
 metadata/_custom_type_script = "uid://cliboavb8gfoy"
