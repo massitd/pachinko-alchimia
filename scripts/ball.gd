@@ -4,7 +4,7 @@ class_name Ball
 ## Set by the launcher via set_deploy_type(), or per-instance in the inspector.
 @export var ball_type: BallType
 
-## Sprite tint for balls with no type or a NEUTRAL one (matches ball.tscn).
+## Sprite tint for a ball with no ball_type at all (the scene no longer sets one).
 const NEUTRAL_COLOR := Color(0.9764706, 0.47058824, 0)
 
 @onready var _sprite: Sprite2D = $Ball
@@ -29,8 +29,7 @@ func set_deploy_type(type: BallType) -> void:
 
 
 func _apply_color() -> void:
-	var element := ball_type.element if ball_type else Alchemy.Element.NEUTRAL
-	_sprite.modulate = Alchemy.color_for_element(element, NEUTRAL_COLOR)
+	_sprite.modulate = ball_type.color if ball_type else NEUTRAL_COLOR
 
 
 func _physics_process(delta: float) -> void:
