@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BallType" format=3 uid="uid://32prd2op0n5i"]
+
+[ext_resource type="PackedScene" uid="uid://d2ei5n24yke01" path="res://Scenes/objects/balls/ball.tscn" id="1_urkqq"]
+[ext_resource type="Script" uid="uid://occdsqnllmr4" path="res://scripts/class_name/BallType.gd" id="2_ow25o"]
+
+[resource]
+script = ExtResource("2_ow25o")
+scene = ExtResource("1_urkqq")
+element = 1
+color = Color(0.6986801, 0.33731353, 0.12236907, 1)
+metadata/_custom_type_script = "uid://occdsqnllmr4"

@@ -19,7 +19,7 @@ script = ExtResource("1_d10cq")
 shape = SubResource("CircleShape2D_avqsf")
 
 [node name="Ball" type="Sprite2D" parent="." unique_id=1642497540]
-modulate = Color(0.9764706, 0.47058824, 0, 1)
 position = Vector2(6.2584877e-07, 0)
+rotation = -0.0028880916
 scale = Vector2(0.18, 0.18000002)
 texture = ExtResource("1_sj48a")
