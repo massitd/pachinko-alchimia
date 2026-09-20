@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://qo8bibm1ntwf" path="res://addons/godot-rapier2d/fluid_2d_shader_renderer.gd" id="13_3o7cg"]
 [ext_resource type="Material" uid="uid://cysnk7s2ll173" path="res://addons/godot-rapier2d/water_shader.tres" id="14_2a4j4"]
 [ext_resource type="Script" uid="uid://exnldom42h7s" path="res://scripts/potion_fluid_pool.gd" id="16_bi03b"]
-[ext_resource type="Script" path="res://scripts/managers/popup_manager.gd" id="17_popup"]
+[ext_resource type="Script" uid="uid://dt2dvktur0ka6" path="res://scripts/managers/popup_manager.gd" id="17_popup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0vl6"]
 size = Vector2(1440, 10)
@@ -93,7 +93,7 @@ script = ExtResource("6_iemmg")
 [node name="ScoringManager" type="Node" parent="." unique_id=777426865]
 script = ExtResource("7_3b8rg")
 
-[node name="PopupManager" type="Node2D" parent="."]
+[node name="PopupManager" type="Node2D" parent="." unique_id=2069552868]
 z_index = 100
 script = ExtResource("17_popup")
 
