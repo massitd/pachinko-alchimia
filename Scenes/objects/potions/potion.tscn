@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cm5w5pxae75vt"]
 
-[ext_resource type="Script" uid="uid://baty4tj0cjkkw" path="res://scripts/class_name/Potion.gd" id="1_367ky"]
+[ext_resource type="Script" uid="uid://baty4tj0cjkkw" path="res://scripts/Potion.gd" id="1_367ky"]
 [ext_resource type="Texture2D" uid="uid://fraccqs4ocy8" path="res://Assets/potion.png" id="2_367ky"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d10cq"]
