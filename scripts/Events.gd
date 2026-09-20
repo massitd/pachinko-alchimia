@@ -22,8 +22,9 @@ signal peg_hit(peg: Node2D, ball: Node2D)
 signal peg_rehit(peg: Node2D, ball: Node2D)
 ## Emitted by ScoringManager once a direct hit has been scored. `relationship`
 ## is an Alchemy.Relationship; `mult_gain` is the mult this hit added (0 if none);
-## `chain` is the chain multiplier after this hit (0 once it's broken).
-signal hit_scored(peg: Node2D, points: int, mult_gain: int, relationship: int, chain: int)
+## `chain` is the chain multiplier after this hit (0 once it's broken);
+## `chain_lost` is the chain this hit just broke (0 if it broke nothing).
+signal hit_scored(peg: Node2D, points: int, mult_gain: int, relationship: int, chain: int, chain_lost: int)
 signal ball_lost(ball: Node2D)
 signal ball_fired(ball: Node2D)
 signal potion_fired(potion: Node2D)

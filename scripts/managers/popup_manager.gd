@@ -10,24 +10,30 @@ const JITTER := 8.0
 const SCORE_COLOR := Color("ffffff")
 const OPPOSITE_COLOR := Color("ffb340")  # boosted hit
 const MULT_COLOR := Color("5ad7ff")
+const CHAIN_LOST_COLOR := Color("ff5a5a")
 
 
 func _ready() -> void:
 	Events.hit_scored.connect(_on_hit_scored)
 
 
-func _on_hit_scored(peg: Node2D, points: int, mult_gain: int, relationship: int, chain: int) -> void:
+func _on_hit_scored(peg: Node2D, points: int, mult_gain: int, relationship: int, chain: int, chain_lost: int) -> void:
 	if not is_instance_valid(peg):
 		return
 	var origin := peg.global_position + Vector2(randf_range(-JITTER, JITTER), -14.0)
 
 	var score_color := OPPOSITE_COLOR if relationship == Alchemy.Relationship.OPPOSITE else SCORE_COLOR
 	_spawn("+%d" % points, origin, score_color, 22)
+	var rows := 0  # popups stacked above the score number so far
 	if mult_gain > 0:
 		var text := "+%d mult" % mult_gain
 		if chain > 0:
 			text += "  chain ×%d" % chain
-		_spawn(text, origin + Vector2(0, -22), MULT_COLOR, 18)
+		rows += 1
+		_spawn(text, origin + Vector2(0, -22 * rows), MULT_COLOR, 18)
+	if chain_lost > 0:
+		rows += 1
+		_spawn("chain lost  ×%d" % chain_lost, origin + Vector2(0, -22 * rows), CHAIN_LOST_COLOR, 18)
 
 
 func _spawn(text: String, at: Vector2, color: Color, font_size: int) -> void:

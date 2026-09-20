@@ -48,15 +48,17 @@ func _on_peg_hit(peg, ball) -> void:
 	Events.score_changed.emit(shot_score, round_score)
 
 	var mult_gain: int = peg.peg_type.mult
+	var chain_lost := 0
 	if relationship == Alchemy.Relationship.SAME:
 		chain_mult += CHAIN_STEP
 		mult_gain += CHAIN_STEP
 	else:
+		chain_lost = chain_mult - CHAIN_BASE
 		chain_mult = CHAIN_BASE
 
 	shot_mult += peg.peg_type.mult
 	Events.mult_changed.emit(_total_mult())
-	Events.hit_scored.emit(peg, points, mult_gain, relationship, chain_mult)
+	Events.hit_scored.emit(peg, points, mult_gain, relationship, chain_mult, chain_lost)
 
 
 func _total_mult() -> int:
