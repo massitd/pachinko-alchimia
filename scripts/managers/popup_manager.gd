@@ -16,7 +16,7 @@ func _ready() -> void:
 	Events.hit_scored.connect(_on_hit_scored)
 
 
-func _on_hit_scored(peg: Node2D, points: int, mult_gain: int, relationship: int) -> void:
+func _on_hit_scored(peg: Node2D, points: int, mult_gain: int, relationship: int, chain: int) -> void:
 	if not is_instance_valid(peg):
 		return
 	var origin := peg.global_position + Vector2(randf_range(-JITTER, JITTER), -14.0)
@@ -24,7 +24,10 @@ func _on_hit_scored(peg: Node2D, points: int, mult_gain: int, relationship: int)
 	var score_color := OPPOSITE_COLOR if relationship == Alchemy.Relationship.OPPOSITE else SCORE_COLOR
 	_spawn("+%d" % points, origin, score_color, 22)
 	if mult_gain > 0:
-		_spawn("+%d mult" % mult_gain, origin + Vector2(0, -22), MULT_COLOR, 18)
+		var text := "+%d mult" % mult_gain
+		if chain > 0:
+			text += "  chain ×%d" % chain
+		_spawn(text, origin + Vector2(0, -22), MULT_COLOR, 18)
 
 
 func _spawn(text: String, at: Vector2, color: Color, font_size: int) -> void:

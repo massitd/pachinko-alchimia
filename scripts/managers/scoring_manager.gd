@@ -56,7 +56,7 @@ func _on_peg_hit(peg, ball) -> void:
 
 	shot_mult += peg.peg_type.mult
 	Events.mult_changed.emit(_total_mult())
-	Events.hit_scored.emit(peg, points, mult_gain, relationship)
+	Events.hit_scored.emit(peg, points, mult_gain, relationship, chain_mult)
 
 
 func _total_mult() -> int:
