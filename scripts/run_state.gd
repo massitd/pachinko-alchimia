@@ -15,7 +15,10 @@ const HOT_POTION := preload("res://types/potion_types/fire_potion.tres")
 const COLD_POTION := preload("res://types/potion_types/cold_potion.tres")
 const WET_POTION := preload("res://types/potion_types/wet_potion.tres")
 const DRY_POTION := preload("res://types/potion_types/dry_potion.tres")
-const BASIC_BALL := preload("res://types/ball_types/basic_ball.tres")
+const FIRE_BALL := preload("res://types/ball_types/fire_ball.tres")
+const WATER_BALL := preload("res://types/ball_types/water_ball.tres")
+const EARTH_BALL := preload("res://types/ball_types/earth_ball.tres")
+const AIR_BALL := preload("res://types/ball_types/air_ball.tres")
 
 var owned_potions: Array[PotionType] = []
 var owned_balls: Array[BallType] = []
@@ -28,4 +31,4 @@ func _ready() -> void:
 ## Placeholder loadout until real acquisition (shop / drafts / rewards) exists.
 func _seed_starting_inventory() -> void:
 	owned_potions = [HOT_POTION, COLD_POTION, WET_POTION, DRY_POTION]
-	owned_balls = [BASIC_BALL, BASIC_BALL, BASIC_BALL]
+	owned_balls = [FIRE_BALL, WATER_BALL, EARTH_BALL, AIR_BALL]
