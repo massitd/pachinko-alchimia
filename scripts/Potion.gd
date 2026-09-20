@@ -9,14 +9,31 @@ class_name Potion
 
 var _shattered: bool = false
 
+# Where the potion was launched from; its sprite's top always points back here.
+var _launch_origin: Vector2
+var _sprite_rest_pos: Vector2
+
 
 func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 4
 	body_entered.connect(_on_body_entered)
+	_launch_origin = global_position
+	_sprite_rest_pos = _sprite.position
 
 	if potion_type and _sprite is CanvasItem:
 		_sprite.modulate = Alchemy.color_for_quality(potion_type.quality)
+
+
+# The body tumbles under physics, but the sprite is re-aimed every frame so the
+# top of the bottle points back at the launcher.
+func _process(_delta: float) -> void:
+	if _shattered:
+		return
+	var facing := (_launch_origin - global_position).angle() + PI / 2.0
+	_sprite.global_rotation = facing
+	# Keep the sprite's resting offset "above" it in that facing, not the body's.
+	_sprite.position = _sprite_rest_pos.rotated(facing - global_rotation)
 
 
 # Generic hook the launcher's deploy logic calls without needing to know this
