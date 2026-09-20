@@ -22,6 +22,7 @@ var _cast_shape := CircleShape2D.new()
 # The queue entry the marker currently mirrors; the marker is only rebuilt when
 # the next thing to fire changes.
 var _marker_entry: Resource
+var _marker_faces_launcher := false
 
 func _can_fire_anything() -> bool:
 	return state_manager.can_shoot() or state_manager.can_fire_potion()
@@ -65,6 +66,7 @@ func _refresh_marker() -> void:
 	if entry == null or entry == _marker_entry:
 		return
 	_marker_entry = entry
+	_marker_faces_launcher = entry is PotionType
 
 	var preview: Node = entry.scene.instantiate()
 	var sprites: Array = preview.find_children("*", "Sprite2D", true, false)
@@ -80,6 +82,10 @@ func _refresh_marker() -> void:
 		else:
 			$marker.modulate = sprite.modulate
 	preview.free()
+
+## Rotation that makes a sprite's top (-Y) point from `from` toward the launcher.
+func _facing_launcher(from: Vector2) -> float:
+	return ($cannon/ball_spawn.global_position - from).angle() + PI / 2.0
 
 func _on_state_changed(new_state) -> void:
 	_aim_visibility()
@@ -125,6 +131,8 @@ func update_trajectory() -> void:
 			var contact_pos = pos + motion * cast[0]
 			points.append(to_local(contact_pos))
 			$marker.global_position = contact_pos
+			# A potion's top points back at the launcher, like the one in flight.
+			$marker.global_rotation = _facing_launcher(contact_pos) if _marker_faces_launcher else 0.0
 			$marker.visible = true
 
 			# phase 2: short reflected stub to hint the bounce direction
