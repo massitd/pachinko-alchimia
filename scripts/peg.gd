@@ -132,17 +132,9 @@ func _update_particles(delta: float) -> void:
 		node.modulate.a = w
 		node.visible = w > 0.0
 
-# Peg-specific: element colors plus the peg_type fallback for NEUTRAL, so this
-# stays here rather than moving wholesale into Alchemy (which only knows
-# about qualities/elements in the abstract, not a particular peg's resting
-# color). Worth revisiting if Alchemy grows an Element color helper later.
+# NEUTRAL falls back to the peg's resting color.
 func _color_for_element(e: Alchemy.Element) -> Color:
-	match e:
-		Alchemy.Element.FIRE:  return Color("e8462a")  # warm red
-		Alchemy.Element.WATER: return Color("2a7de8")  # blue
-		Alchemy.Element.EARTH: return Color("5aa657")  # green
-		Alchemy.Element.AIR:   return Color("b1c9d9ff")  # pale steam
-		_:                     return peg_type.color if peg_type else Color.WHITE  # NEUTRAL → resting color
+	return Alchemy.color_for_element(e, peg_type.color if peg_type else Color.WHITE)
 
 
 # Single-axis pegs (only heated, only wetted, ...) have no Element yet, but they

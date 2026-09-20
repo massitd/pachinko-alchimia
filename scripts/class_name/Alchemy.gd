@@ -31,3 +31,14 @@ static func color_for_quality(q: Quality) -> Color:
 		Quality.WET:	return Color("2a5de8")  # deep blue
 		Quality.DRY:	return Color("c8a464")  # tan
 		_:				return Color.WHITE
+
+
+## Display color for an element. `neutral` is what NEUTRAL falls back to, since
+## a neutral peg or ball has its own resting color.
+static func color_for_element(e: Element, neutral := Color.WHITE) -> Color:
+	match e:
+		Element.FIRE:	return Color("e8462a")  # warm red
+		Element.WATER:	return Color("2a7de8")  # blue
+		Element.EARTH:	return Color("5aa657")  # green
+		Element.AIR:	return Color("b1c9d9ff")  # pale steam
+		_:				return neutral
